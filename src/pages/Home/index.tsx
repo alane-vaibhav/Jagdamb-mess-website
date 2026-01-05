@@ -1,5 +1,11 @@
+import OrderPlacement from "../../components/forms/OrderPlacement";
+
 const HomePage = () => {
-  return <div>Home Page</div>;
+  return (
+    <div className="w-[80%]">
+      <OrderPlacement />
+    </div>
+  );
 };
 
 export default HomePage;
