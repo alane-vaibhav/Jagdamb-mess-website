@@ -12,4 +12,10 @@ export const ProfileDetailsSchema = z.object({
     city: z.string().min(1, "City is required"),
     state: z.string().min(1, "State is required"),
   }),
+  hobbies: z
+    .array(z.object({ name: z.string().min(1, "Hobby name is required") }))
+    .min(1, "At least one hobby is required"),
+  startDate: z.date(),
+  subscribe: z.boolean(),
+  referral: z.string().default(""),
 });
