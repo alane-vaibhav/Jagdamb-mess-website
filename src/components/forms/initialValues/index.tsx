@@ -2,10 +2,13 @@ export const initialValuesProfile = {
   firstName: "",
   lastName: "",
   email: "",
-  age: null,
+  age: 0,
   gender: "",
   address: {
     city: "",
     state: "",
   },
+  hobbies: [{ name: "" }],
+  startDate: null,
+  subscribe: false,
 };
