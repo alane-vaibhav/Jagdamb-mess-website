@@ -11,4 +11,5 @@ export const initialValuesProfile = {
   hobbies: [{ name: "" }],
   startDate: null,
   subscribe: false,
+  referral: "",
 };

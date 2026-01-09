@@ -136,7 +136,9 @@ const OrderPlacement = () => {
                         errors?.hobbies?.[index] &&
                         typeof errors.hobbies?.[index] === "object" &&
                         (errors.hobbies[index] as any)?.name && (
-                          <p>{(errors.hobbies[index] as any)?.name}</p>
+                          <p style={{ color: "orange" }}>
+                            {(errors.hobbies[index] as any)?.name}
+                          </p>
                         )}
                       {values?.hobbies?.length > 1 && (
                         <button type="button" onClick={() => remove(index)}>
@@ -164,6 +166,23 @@ const OrderPlacement = () => {
             onChange={handleChange}
           />
         </div>
+        {values?.subscribe && (
+          <div>
+            <label>Referral Source</label>
+            <input
+              type="text"
+              name="referral"
+              onChange={handleChange}
+              placeholder="How did you hear about us?"
+            />
+            {errors?.subscribe && touched?.subscribe && (
+              <p style={{ color: "orange" }}>{errors.referral}</p>
+            )}
+          </div>
+        )}
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Submitting" : "Submit"}
+        </button>
       </form>
     </div>
   );
