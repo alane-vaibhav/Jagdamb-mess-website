@@ -2,6 +2,7 @@ import { FieldArray, useFormik } from "formik";
 import { ProfileDetailsSchema } from "./schema";
 import { initialValuesProfile } from "./initialValues";
 import DatePicker from "react-datepicker";
+import InputField from "../form-components/InputField";
 
 const OrderPlacement = () => {
   const validationSchema = ProfileDetailsSchema;
@@ -27,10 +28,11 @@ const OrderPlacement = () => {
       <form>
         <div>
           <label>First Name</label>
-          <input
+          <InputField
             type="text"
             name="firstName"
             value={values?.firstName}
+            placeHolder="enter first name"
             onChange={handleChange}
             onBlur={handleBlur}
           />
